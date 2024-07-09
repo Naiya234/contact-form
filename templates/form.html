@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <ol>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+        </ol>
+    </header>
+    <main>
+        <h2>Love to hear from you!</h2>
+        <p><strong>Quote of the Moment:</strong> {{ quote }}</p>
+        <p><strong>Date and Time:</strong> {{ current_date_time }}</p>
+        <form action="/submit_form" method="post">
+            <label for="Firstname">First Name:</label>
+            <input type="text" id="Firstname" name="first_name" required><br>
+
+            <label for="Last name">Last name:</label>
+            <input type="text" id="surname" name="last_name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" name="contact" pattern="\d{10}" minlength="10" maxlength="10" required><br>
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </main>
+    <footer>
+        <p>Contact us at:   
+            <b><a style="color:gray;" target="_blank" href="https://www.chaintech.network/">contact@example.com</a></b>
+        </p>
+    </footer>
+</body>
+</html>
